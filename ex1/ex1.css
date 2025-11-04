@@ -42,3 +42,62 @@ button:hover {
 .supp {
     background-color: red;
 }
+
+.container {
+    display: flex;
+    gap: 50px;
+    margin: 20px;
+}
+
+.left-section, .right-section {
+    flex: 1;
+}
+.formulaire {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    max-width: 400px;
+}
+
+.formulaire h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.soumettre {
+    background-color: #28a745;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.erreur {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
