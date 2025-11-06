@@ -15,14 +15,12 @@
       <div class="topnav">
         <a href="#home" class="active">TP3</a>
 
-        <!-- Menu links are hidden by default -->
         <div id="myLink">
           <a href="../ex1/index.html">EX1</a>
           <a href="../ex5/index.html">EX5</a>
           <a href="../calculator/index.html">Calculatrice</a>
         </div>
 
-        <!-- Icon triggers the function -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -36,7 +34,9 @@
     </div>
 
     <script>
+      //creation de la fonction
       function myFunction() {
+        //noti displayed befire clicking
         var x = document.getElementById("myLink");
         if (x.style.display === "block") {
           x.style.display = "none";
