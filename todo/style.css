@@ -126,3 +126,24 @@ h1 {
   font-style: italic;
   padding: 20px;
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  #taskInput {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  #addButton {
+    border-radius: 5px;
+  }
+}
+
+/* end of style.css */
