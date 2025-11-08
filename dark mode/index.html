@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>dark/light mode</title>
+  </head>
+  <body class="light">
+    <h1>Entre dark et light mode</h1>
+    <p>Cliquez pour changez le theme</p>
+    <button id="toggleBtn">Activer le Thème Sombre</button>
+
+    <script>
+      const body = document.body;
+      const button = document.getElementById("toggleBtn");
+      let theme = "light";
+
+      button.addEventListener("click", function () {
+        if (theme === "light") {
+          body.className = "dark";
+          button.textContent = "Activer le Thème Clair";
+          theme = "dark";
+        } else {
+          body.className = "light";
+          button.textContent = "Activer le Thème Sombre";
+          theme = "light";
+        }
+      });
+    </script>
+  </body>
+</html>
