@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Glisser-Déposer Simple</title>
+  </head>
+  <body>
+    <h1>drag and drop</h1>
+
+    <div class="container">
+      <div class="box">
+        <h2>deplacez</h2>
+        <div class="drop-zone" id="source">
+          <div class="item" draggable="true">Élément 1</div>
+          <div class="item" draggable="true">Élément 2</div>
+          <div class="item" draggable="true">Élément 3</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>poser ici</h2>
+        <div class="drop-zone" id="target"></div>
+      </div>
+    </div>
+
+    <p class="instructions">le glissement est vers ce sens ----&gt;</p>
+
+    <script>
+      const draggableItems = document.querySelectorAll(".item");
+
+      const dropZones = document.querySelectorAll(".drop-zone");
+
+      draggableItems.forEach((item) => {
+        item.addEventListener("dragstart", function (e) {
+          this.classList.add("dragging");
+
+          e.dataTransfer.setData("text/plain", this.textContent);
+        });
+
+        item.addEventListener("dragend", function () {
+          this.classList.remove("dragging");
+        });
+      });
+      dropZones.forEach((zone) => {
+        zone.addEventListener("dragover", function (e) {
+          e.preventDefault();
+
+          this.classList.add("drag-over");
+        });
+
+        zone.addEventListener("dragleave", function () {
+          this.classList.remove("drag-over");
+        });
+
+        zone.addEventListener("drop", function (e) {
+          e.preventDefault();
+
+          this.classList.remove("drag-over");
+
+          const data = e.dataTransfer.getData("text/plain");
+
+          const newItem = document.createElement("div");
+          newItem.className = "item";
+          newItem.draggable = true;
+          newItem.textContent = data;
+
+          newItem.addEventListener("dragstart", function (e) {
+            this.classList.add("dragging");
+            e.dataTransfer.setData("text/plain", this.textContent);
+          });
+
+          newItem.addEventListener("dragend", function () {
+            this.classList.remove("dragging");
+          });
+          this.appendChild(newItem);
+
+          const sourceItems = document.querySelectorAll("#source .item");
+          sourceItems.forEach((item) => {
+            if (item.textContent === data) {
+              item.remove();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
