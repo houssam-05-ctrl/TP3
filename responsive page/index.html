@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Responsive avec JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .mobile-only {
+        display: none;
+        background-color: #e0f7fa;
+        padding: 10px;
+      }
+
+      .desktop-only {
+        background-color: #fff3e0;
+        padding: 10px;
+      }
+
+      .info {
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Page Responsive avec JavaScript</h1>
+
+    <div class="container">
+      <label>Type:</label>
+      <input type="text" id="typeInput" />
+    </div>
+
+    <div class="container">
+      <label>Date:</label>
+      <input type="date" id="dateInput1" />
+    </div>
+
+    <div class="container">
+      <label>Date:</label>
+      <input type="date" id="dateInput2" />
+    </div>
+
+    <!-- Élément visible seulement sur mobile -->
+    <div class="mobile-only" id="mobileElement">
+      <p>Ce message est visible uniquement sur mobile</p>
+    </div>
+
+    <!-- Élément visible seulement sur desktop -->
+    <div class="desktop-only" id="desktopElement">
+      <p>Ce message est visible uniquement sur desktop</p>
+    </div>
+
+    <div class="info" id="sizeInfo">
+      Largeur de l'écran: <span id="widthValue">0</span>px
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
